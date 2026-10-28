@@ -21,3 +21,5 @@ All pull requests during the development phase must target the **dev** branch (i
 Pull requests to the main branch are restricted until the homework assignment is completed.
 Pull request to the dev branch requires at least 1 person to review it.
 Pull request to the main branch requires all of the team members to review it.
+
+*Note: Just upload the src folder (or its components) to the repository. Do not upload unneccessary IDE folders.*
