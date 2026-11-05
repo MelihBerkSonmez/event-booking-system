@@ -1,3 +1,5 @@
+import org.w3c.dom.events.Event;
+
 public class Booking {
     private int bookingId;
     private Customer customer;
@@ -67,8 +69,7 @@ public void setFinalPaidAmount(double finalPaidAmount) {
 }
 
 @Override 
-//Overriding equals method to compare two Booking objects based on their unique bookingId
- public boolean equals(Object obj){
+ public boolean equals(Object obj) { //Overriding equals method to compare two Booking objects based on their unique bookingId
     if (this == obj) return true; //Are they the same object in memory?
     if (obj ==null || getClass() != obj.getClass()) return false; //Are they of the same class type?
     Booking other = (Booking) obj; //Turning the obj into a Booking object so we can access its fields
