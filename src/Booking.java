@@ -6,7 +6,7 @@ public class Booking {
     private double originalTotalPrice;
     private double finalPaidAmount;
     private BookingStatus bookingStatus; // Declaring all the fields of the Booking class
-}
+
 
 public Booking(int bookingId, Customer customer, Event event, int ticketQuantity, double originalTotalPrice, double finalPaidAmount, BookingStatus bookingStatus) {
     // Constructor with parameters to initialize the fields of the Booking class
@@ -64,4 +64,15 @@ public void setBookingStatus(BookingStatus bookingStatus) {
 }
 public void setFinalPaidAmount(double finalPaidAmount) {
     this.finalPaidAmount = finalPaidAmount;
+}
+
+@Override 
+//Overriding equals method to compare two Booking objects based on their unique bookingId
+ public boolean equals(Object obj){
+    if (this == obj) return true; //Are they the same object in memory?
+    if (obj ==null || getClass() != obj.getClass()) return false; //Are they of the same class type?
+    Booking other = (Booking) obj; //Turning the obj into a Booking object so we can access its fields
+
+    return bookingId == other.bookingId; //Comparing the unique bookingId of both objects to determine equality
+ }
 }
