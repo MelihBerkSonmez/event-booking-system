@@ -1,0 +1,67 @@
+public class Booking {
+    private int bookingId;
+    private Customer customer;
+    private Event event;
+    private int ticketQuantity;
+    private double originalTotalPrice;
+    private double finalPaidAmount;
+    private BookingStatus bookingStatus; // Declaring all the fields of the Booking class
+}
+
+public Booking(int bookingId, Customer customer, Event event, int ticketQuantity, double originalTotalPrice, double finalPaidAmount, BookingStatus bookingStatus) {
+    // Constructor with parameters to initialize the fields of the Booking class
+    this.bookingId = bookingId;
+    this.customer = customer;
+    this.event = event;
+    this.ticketQuantity = ticketQuantity;
+    this.originalTotalPrice = originalTotalPrice;
+    this.finalPaidAmount = finalPaidAmount;
+    this.bookingStatus = bookingStatus;
+}
+public Booking(Booking other) {
+    //Copy constructor for the booking class
+    this.bookingId =other.bookingId;
+    this.customer = new Customer(other.customer); // Assuming Customer class has a copy constructor so it can have a deep copy
+    this.event = new Event(other.event); 
+    this.ticketQuantity = other.ticketQuantity;
+    this.originalTotalPrice = other.originalTotalPrice;
+    this.finalPaidAmount = other.finalPaidAmount;
+    this.bookingStatus = other.bookingStatus;
+}
+
+//Accessor methods (getters) for each field of the Booking class
+public int getBookingId() {
+    return bookingId;
+}
+
+public Customer getCustomer() {
+    return customer;
+}
+
+public Event getEvent() {
+    return event;
+}
+
+public int getTicketQuantity() {
+    return ticketQuantity;
+}
+
+public double getOriginalTotalPrice() {
+    return originalTotalPrice;
+}
+
+public double getFinalPaidAmount() {
+    return finalPaidAmount;
+}
+
+public BookingStatus getBookingStatus() {
+    return bookingStatus;
+}
+
+// Mutator methods (setters)
+public void setBookingStatus(BookingStatus bookingStatus) {
+    this.bookingStatus = bookingStatus;
+}
+public void setFinalPaidAmount(double finalPaidAmount) {
+    this.finalPaidAmount = finalPaidAmount;
+}
