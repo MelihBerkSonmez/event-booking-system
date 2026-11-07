@@ -35,16 +35,16 @@ public class Event {
         this.reservedTickets = other.reservedTickets;
     }
 
-    //accesors
-    public int getID(){
+    //Accessors
+    public int getEventID(){
         return eventID;
     }
 
-    public String getName(){
+    public String getEventName(){
         return eventName;
     }
 
-    public EventCategory getCategory(){
+    public EventCategory getEventCategory(){
         return eventCategory;
     }
 
@@ -52,12 +52,16 @@ public class Event {
         return capacity;
     }
 
-    public double getPrice(){
+    public double getTicketPrice(){
         return ticketPrice;
     }
 
-    public int getAvailableSeats(){
+    public int getAvailableTickets(){
         return capacity - reservedTickets;
+    }
+
+    public int getReservedTickets() {
+        return reservedTickets;
     }
 
     //Reserves the requested number of tickets if the amount is valid and capacity allows
@@ -91,24 +95,5 @@ public class Event {
          "Capacity: " + capacity + ", " +
          "Price: " + ticketPrice + ", " +
          "Reserve: " + reservedTickets + "}";
-    }
-}
-
-//test-debug class
-class EventTest{
-    public static void main(String[] args){
-        Event x = new Event(101, "isim", EventCategory.CONCERT, 30, 150.0);
-        System.out.println(x);
-        x.reserveTicket(3);
-        System.out.println(x.getAvailableSeats());
-        System.out.println(x);
-        x.releaseReservedTickets(2);
-        System.out.println(x);
-        x.releaseReservedTickets(2);
-        System.out.println(x);
-        Event y = new Event(x);
-        System.out.println(y);
-        System.out.println(y.equals(x));
-        System.out.println(y.getAvailableSeats());
     }
 }

@@ -1,13 +1,7 @@
-
-import java.util.Objects;
-
 public class Customer {
-
-    
     private int customerID;
     private String customerName;
     private double balance;
-
     
     public Customer(int customerID, String customerName, double balance) {
         this.customerID = customerID;
@@ -16,6 +10,9 @@ public class Customer {
     }
 
     public Customer(Customer other) {
+        if (other == null) {
+            throw new IllegalArgumentException("[Customer, Copy Constructor] customer argument cannot be null!");
+        }
         this(other.customerID, other.customerName, other.balance);
     }
 
@@ -47,13 +44,25 @@ public class Customer {
         return amount >= 0 && balance >= amount;
     }
 
-    public void buyTicket(double ticketPrice) {
+    // Returns to the paid amount
+    public double buyTicket(double ticketPrice) {
         if (canBuy(ticketPrice)) {
-            balance -= ticketPrice;
+            setBalance(balance - ticketPrice);
+            return ticketPrice;
         }
+        return -1; //special error case
     }
 
-    //not sure wheter its needed or not
+    public void refund(double amount) {
+        if (amount < 0) {
+            System.err.println("[Customer] amount argument cannot be less than zero!");
+            return;
+        }
+
+        setBalance(balance + amount);
+    }
+
+    //not sure whether it's needed or not
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
