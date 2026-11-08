@@ -97,9 +97,13 @@ public class Query {
             }
         }
 
-            //Note that .getSimpleName() returns to the Customer or PremiumCustomer
-            String membershipType = chosenCustomer.getClass().getSimpleName().equals("PremiumCustomer") ? "Premium" : "Regular";
-            System.out.printf("Q3: %s | %s | %d tickets\n", chosenCustomer.getCustomerName(), membershipType, maxReservedTickets);
+        if (chosenCustomer == null) {
+            return;
+        }
+
+        //Note that .getSimpleName() returns to the Customer or PremiumCustomer
+        String membershipType = chosenCustomer.getClass().getSimpleName().equals("PremiumCustomer") ? "PREMIUM" : "REGULAR";
+        System.out.printf("Q3: %s | %s | %d tickets\n", chosenCustomer.getCustomerName(), membershipType, maxReservedTickets);
     }
 
     public void printTicketsByCategory() {

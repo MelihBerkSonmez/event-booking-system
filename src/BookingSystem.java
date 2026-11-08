@@ -75,12 +75,12 @@ public class BookingSystem {
         OperationAttempt[] operationAttempts2 = {c1, c2};
 
         for (int i=0; i<operationAttempts2.length; i++) {
-            if (operationAttempts[i] == null) {
+            if (operationAttempts2[i] == null) {
                 continue;
-            } else if (operationAttempts[i].isSuccessful()) {
-                System.out.printf("C%d: SUCCESS | Paid: %.2f\n", (i+1), operationAttempts[i].getBooking().getFinalPaidAmount());
+            } else if (operationAttempts2[i].isSuccessful()) {
+                System.out.printf("C%d: SUCCESS | Refund: %.2f\n", (i+1), operationAttempts2[i].getBooking().getFinalPaidAmount());
             } else {
-                System.out.printf("C%d: FAILED | %s\n", (i+1), operationAttempts[i].getFailReason());
+                System.out.printf("C%d: FAILED | %s\n", (i+1), operationAttempts2[i].getFailReason());
             }
         }
 
@@ -105,7 +105,6 @@ public class BookingSystem {
                 break;
         }
 
-        System.out.println("========== GROUP SPECIFIC POLICIES ==========");
         System.out.println("Restricted Category: " + restrictedCategory);
         System.out.println("Selected EventID: " + selectedEventID);
 
@@ -190,7 +189,7 @@ public class BookingSystem {
         }
 
         // Group-specific rule
-        if (restrictedCategory != null && customer.getClass() == PremiumCustomer.class && event.getEventCategory() == restrictedCategory) {
+        if (restrictedCategory != null && customer.getClass() == Customer.class && event.getEventCategory() == restrictedCategory) {
             return new OperationAttempt(null, false, "Event category " + restrictedCategory + " is restricted for premium customers.");
         }
 

@@ -33,6 +33,11 @@ public class TicketBookingApp {
         GroupPolicy[] policies = GroupPolicy.values();
         GroupPolicy selectedPolicy = policies[policyIndex];
 
+        //Printing Group Infos
+        System.out.println("========== GROUP-SPECIFIC RULE ==========");
+        System.out.println("Group: " + groupNumber);
+        System.out.println("Rule: " + selectedPolicy);
+
         BookingSystem bookingSystem2 = null;
         switch (selectedPolicy) {
             case CATEGORY_RESTRICTION:
@@ -40,6 +45,7 @@ public class TicketBookingApp {
                 String[] restrictedCategories = {"CONCERT", "SPORTS", "CONFERENCE"};
 
                 EventCategory restrictedCategory = EventCategory.valueOf(restrictedCategories[restrictedCategoryIndex]);
+                System.out.println("Parameter: " + restrictedCategory);
 
                 bookingSystem2 = new BookingSystem(events2, customers2, restrictedCategory);
                 break;
