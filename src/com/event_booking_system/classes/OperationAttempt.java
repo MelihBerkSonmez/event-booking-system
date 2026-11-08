@@ -1,3 +1,5 @@
+package com.event_booking_system.classes;
+
 public class OperationAttempt {
     private Booking booking;
     private boolean isSuccessful;

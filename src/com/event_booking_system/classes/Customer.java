@@ -1,3 +1,5 @@
+package com.event_booking_system.classes;
+
 public class Customer {
     private int customerID;
     private String customerName;

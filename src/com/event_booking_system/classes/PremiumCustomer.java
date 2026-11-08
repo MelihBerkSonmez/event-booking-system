@@ -1,3 +1,5 @@
+package com.event_booking_system.classes;
+
 public class PremiumCustomer extends Customer {
     private static final double PREMIUM_DISCOUNT = 0.05;
 

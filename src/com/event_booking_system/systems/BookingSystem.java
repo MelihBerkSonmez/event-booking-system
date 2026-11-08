@@ -1,3 +1,8 @@
+package com.event_booking_system.systems;
+
+import com.event_booking_system.enums.*;
+import com.event_booking_system.classes.*;
+
 import java.util.ArrayList;
 
 public class BookingSystem {

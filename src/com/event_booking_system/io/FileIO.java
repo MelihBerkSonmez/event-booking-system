@@ -1,3 +1,8 @@
+package com.event_booking_system.io;
+
+import com.event_booking_system.classes.*;
+import com.event_booking_system.enums.*;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

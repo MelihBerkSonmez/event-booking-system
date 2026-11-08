@@ -1,3 +1,8 @@
+package com.event_booking_system.systems;
+
+import com.event_booking_system.enums.*;
+import com.event_booking_system.classes.*;
+
 import java.util.ArrayList;
 
 public class Query {
@@ -113,13 +118,13 @@ public class Query {
 
         for (Booking booking : activeBookings) {
             switch (booking.getEvent().getEventCategory()) {
-                case CONCERT:
+                case EventCategory.CONCERT:
                     totalConcert += booking.getTicketQuantity();
                     break;
-                case CONFERENCE:
+                case EventCategory.CONFERENCE:
                     totalConference += booking.getTicketQuantity();
                     break;
-                case SPORTS:
+                case EventCategory.SPORTS:
                     totalSports += booking.getTicketQuantity();
                     break;
             }

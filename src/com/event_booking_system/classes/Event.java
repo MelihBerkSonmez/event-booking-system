@@ -1,3 +1,7 @@
+package com.event_booking_system.classes;
+
+import com.event_booking_system.enums.EventCategory;
+
 public class Event {
     //fields
     private final int eventID; //This class cannot guarantee a unique ID, uniqueness must be checked by the system managing the events.

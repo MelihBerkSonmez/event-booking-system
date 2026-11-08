@@ -1,4 +1,6 @@
+package com.event_booking_system.classes;
 
+import com.event_booking_system.enums.BookingStatus;
 
 public class Booking {
     private String bookingID; //will use a clever way to create a unique id

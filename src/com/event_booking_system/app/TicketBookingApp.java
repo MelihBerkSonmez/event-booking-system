@@ -1,6 +1,13 @@
+package com.event_booking_system.app;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+
+import com.event_booking_system.classes.*;
+import com.event_booking_system.enums.*;
+import com.event_booking_system.systems.*;
+import com.event_booking_system.io.FileIO;
 
 public class TicketBookingApp {
 
@@ -40,7 +47,7 @@ public class TicketBookingApp {
 
         BookingSystem bookingSystem2 = null;
         switch (selectedPolicy) {
-            case CATEGORY_RESTRICTION:
+            case GroupPolicy.CATEGORY_RESTRICTION:
                 int restrictedCategoryIndex = groupNumber % 3;
                 String[] restrictedCategories = {"CONCERT", "SPORTS", "CONFERENCE"};
 
